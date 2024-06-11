@@ -20,18 +20,12 @@ export const Homepage = () => {
   useEffect(() => {
     fetch("https://xyn48p9t6i.execute-api.eu-north-1.amazonaws.com/items", {
       method: "GET",
-      mode: 'no-cors',
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Headers': '*',
-        "Content-Type": "application/json",
-      },
     })
       .then((response) => response.json())
       .then((data) => {
         setProducts(data);
-        console.log(data)
-        console.log(products)
+        console.log(data);
+        console.log(products);
       })
       .catch((error) => console.log(error));
   }, []);
