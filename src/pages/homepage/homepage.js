@@ -20,6 +20,7 @@ export const Homepage = () => {
   useEffect(() => {
     fetch("https://xyn48p9t6i.execute-api.eu-north-1.amazonaws.com/items", {
       method: "GET",
+      mode: 'no-cors',
       headers: {
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Headers': '*',
