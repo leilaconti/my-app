@@ -20,6 +20,11 @@ export const Homepage = () => {
   useEffect(() => {
     fetch("https://xyn48p9t6i.execute-api.eu-north-1.amazonaws.com/items", {
       method: "GET",
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': '*',
+        "Content-Type": "application/json",
+      },
     })
       .then((response) => response.json())
       .then((data) => {
@@ -41,7 +46,6 @@ export const Homepage = () => {
               <img
                 className="productImg"
                 src={`https://my-first-shop.s3.eu-north-1.amazonaws.com/${item.ImageName}`}
-                // src={images[0]}
               />
 
               <p>{item.Name}</p>
